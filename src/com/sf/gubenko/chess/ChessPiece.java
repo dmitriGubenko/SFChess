@@ -2,10 +2,23 @@ package com.sf.gubenko.chess;
 
 public abstract class ChessPiece {
     private String color;
+    private String symbol;
     private boolean check = true;
 
     public ChessPiece(String color) {
         this.color = color;
+    }
+
+    String gColor() {
+        return color;
+    }
+
+    String  gSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
     }
 
     abstract String getColor();
