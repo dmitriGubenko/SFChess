@@ -22,11 +22,20 @@ public class King extends ChessPiece{
         }
 
         //TODO Добавить логику по возможному передвижению слона
+
+        //Рокировка
+
+        check = false;
         return true;
     }
 
     @Override
     String getSymbol() {
         return gSymbol();
+    }
+
+    public boolean isUnderAttack(ChessBoard chessBoard, int i, int i1) {
+        //TODO Добавить логику по проверке под атакой ли король
+        return false;
     }
 }

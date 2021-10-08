@@ -21,7 +21,10 @@ public class Rook extends ChessPiece{
             return false;
         }
 
-        //TODO Добавить логику по возможному передвижению слона
+        //TODO Добавить логику по возможному передвижению ладьи
+        //рокировка
+        check = false;
+
         return true;
     }
 
