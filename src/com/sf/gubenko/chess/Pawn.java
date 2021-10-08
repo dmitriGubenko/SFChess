@@ -34,7 +34,7 @@ public class Pawn extends ChessPiece{
 
         }
 
-        //TODO Добавить логику для по возможному передвижению пешки
+        //TODO Добавить логику по возможному передвижению пешки
         return true;
     }
 
