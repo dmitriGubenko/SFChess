@@ -22,11 +22,11 @@ public class Pawn extends ChessPiece{
                 !chessBoard.checkPos(toColumn)) {
             return false;
         }
-        if((getColor().toLowerCase(Locale.ROOT) == "white") &&
+        if((getColor().toLowerCase(Locale.ROOT).equals("white")) &&
                 (line == 1)) {
             //можно идти на 2 клетки вперед за белых
 
-        }else if ((getColor().toLowerCase(Locale.ROOT) == "black") &&
+        }else if ((getColor().toLowerCase(Locale.ROOT).equals("black")) &&
                 (line == 7)) {
             //можно идти на 2 клетки вперед за чёрных
         } else {
