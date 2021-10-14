@@ -24,7 +24,20 @@ public class Bishop extends ChessPiece{
         }
 
         //TODO Добавить логику по возможному передвижению слона
-        return true;
+        if((line == toLine) &&
+        (column == toColumn)) {
+            return false;
+        } else if (line + column == toLine + toColumn){
+            return true;
+        } else if((line == column) && (toLine == toColumn)) {
+           return true;
+        } else if((line + column - 1 == 8) && (toLine + toColumn - 1 == 8)) {
+            return true;
+        } if (Math.abs((line+ column) - (toLine + toColumn))%2 == 0) {
+            return true;
+        }
+
+        return false;
     }
 
     @Override
