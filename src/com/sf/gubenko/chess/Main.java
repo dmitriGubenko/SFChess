@@ -48,5 +48,25 @@ public class Main {
 //        System.out.println(rook.canMoveToPosition(board,1,7,1,3));
 //        System.out.println(rook.canMoveToPosition(board,1,7,2,3));
 
+        King king = new King("w");
+//        System.out.println(king.canMoveToPosition(board,0,3,0,4));
+//        System.out.println(king.canMoveToPosition(board,0,3,0,2));
+        System.out.println(king.canMoveToPosition(board,0,3,0,3));
+        System.out.println(king.canMoveToPosition(board,0,3,0,1));
+        System.out.println(king.canMoveToPosition(board,0,3,0,5));
+        System.out.println(king.canMoveToPosition(board,0,3,0,5));
+
+        System.out.println(king.canMoveToPosition(board,3,3,4,2));
+        System.out.println(king.canMoveToPosition(board,3,3,4,3));
+        System.out.println(king.canMoveToPosition(board,3,3,4,4));
+        System.out.println(king.canMoveToPosition(board,3,3,3,2));
+        System.out.println(king.canMoveToPosition(board,3,3,3,4));
+        System.out.println(king.canMoveToPosition(board,3,3,2,2));
+        System.out.println(king.canMoveToPosition(board,3,3,2,3));
+        System.out.println(king.canMoveToPosition(board,3,3,2,4));
+        System.out.println(king.canMoveToPosition(board,3,3,5,3));
+        System.out.println(king.canMoveToPosition(board,3,3,5,5));
+
+
     }
 }
