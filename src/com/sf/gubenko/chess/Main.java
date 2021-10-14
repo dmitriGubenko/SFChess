@@ -37,5 +37,16 @@ public class Main {
 //        System.out.println(pawnB.canMoveToPosition(board,6,7,4,7));
 //        System.out.println(pawnB.canMoveToPosition(board,6,7,3,7));
 
+
+        Rook rook = new Rook("w");
+//        System.out.println(rook.canMoveToPosition(board,0,0,0,0));
+//        System.out.println(rook.canMoveToPosition(board,0,0,1,0));
+//        System.out.println(rook.canMoveToPosition(board,0,0,-1,0));
+//        System.out.println(rook.canMoveToPosition(board,0,0,7,0));
+//        System.out.println(rook.canMoveToPosition(board,7,0,5,0));
+//        System.out.println(rook.canMoveToPosition(board,1,0,1,7));
+//        System.out.println(rook.canMoveToPosition(board,1,7,1,3));
+//        System.out.println(rook.canMoveToPosition(board,1,7,2,3));
+
     }
 }
