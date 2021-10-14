@@ -22,20 +22,27 @@ public class Pawn extends ChessPiece{
                 !chessBoard.checkPos(toColumn)) {
             return false;
         }
-        if((getColor().toLowerCase(Locale.ROOT).equals("white")) &&
-                (line == 1)) {
-            //можно идти на 2 клетки вперед за белых
-
-        }else if ((getColor().toLowerCase(Locale.ROOT).equals("black")) &&
-                (line == 7)) {
-            //можно идти на 2 клетки вперед за чёрных
-        } else {
-            //можно идти только вперед не больше чем на одну клетку
-
+        if(getColor().toLowerCase(Locale.ROOT).equals("w")) {
+            if((toLine > line) && (column == toColumn)) {
+                if(line == 1) {
+                    return toLine - line == 2 || toLine - line == 1;
+                } else if(line > 1) {
+                    return toLine - line == 1;
+                }
+            }
         }
 
-        //TODO Добавить логику по возможному передвижению пешки
-        return true;
+        if(getColor().toLowerCase(Locale.ROOT).equals("b")) {
+            if((toLine < line) && (column == toColumn)) {
+                if(line == 6) {
+                    return toLine - line == -2 || toLine - line == -1;
+                } else if(line < 6) {
+                    return toLine - line == -1;
+                }
+            }
+        }
+
+        return false;
     }
 
     @Override
