@@ -58,6 +58,15 @@ public class ChessBoard {
         return pos >= 0 && pos <= 7;
     }
 
+    public boolean isSamePos(int line, int column, int toLine, int toColumn) {
+        return line == toLine && column == toColumn;
+    }
+
+    public boolean isBasePos(int line, int column, int toLine, int toColumn) {
+        return checkPos(line) && checkPos(column) && checkPos(toLine) && checkPos(toColumn) &&
+                !isSamePos(line, column, toLine, toColumn);
+    }
+
     //Реализация длинной рокировки
     public boolean castling0() {
         if (nowPlayer.equals("White")) {
