@@ -21,11 +21,14 @@ public class Rook extends ChessPiece{
             return false;
         }
 
-        //TODO Добавить логику по возможному передвижению ладьи
-        //рокировка
-        check = false;
+        if(((line != toLine) && (column == toColumn)) ||
+                ((line == toLine) && (column != toColumn))) {
+            //рокировка
+            check = false;
+            return true;
+        }
 
-        return true;
+        return false;
     }
 
     @Override

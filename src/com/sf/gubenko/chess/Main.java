@@ -50,5 +50,16 @@ public class Main {
         System.out.println(bishop.canMoveToPosition(board, 4,3, 7,0));
         System.out.println(bishop.canMoveToPosition(board, 6,0, 7,1));
         System.out.println(bishop.canMoveToPosition(board, 6,0, 1,7));
+
+        Rook rook = new Rook("w");
+//        System.out.println(rook.canMoveToPosition(board,0,0,0,0));
+//        System.out.println(rook.canMoveToPosition(board,0,0,1,0));
+//        System.out.println(rook.canMoveToPosition(board,0,0,-1,0));
+//        System.out.println(rook.canMoveToPosition(board,0,0,7,0));
+//        System.out.println(rook.canMoveToPosition(board,7,0,5,0));
+//        System.out.println(rook.canMoveToPosition(board,1,0,1,7));
+//        System.out.println(rook.canMoveToPosition(board,1,7,1,3));
+//        System.out.println(rook.canMoveToPosition(board,1,7,2,3));
+
     }
 }
