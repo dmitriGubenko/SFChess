@@ -16,28 +16,26 @@ public class Pawn extends ChessPiece{
 
     @Override
     boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
-        if( !chessBoard.checkPos(line) ||
-                !chessBoard.checkPos(column) ||
-                !chessBoard.checkPos(toLine) ||
-                !chessBoard.checkPos(toColumn)) {
+        if (!chessBoard.isBasePos(line,column,toLine,toColumn)) {
             return false;
         }
-        if(getColor().toLowerCase(Locale.ROOT).equals("w")) {
+        int dLine = toLine - line;
+        if(getColor().toLowerCase(Locale.ROOT).equals("white")) {
             if((toLine > line) && (column == toColumn)) {
                 if(line == 1) {
-                    return toLine - line == 2 || toLine - line == 1;
+                    return dLine == 2 || dLine == 1;
                 } else if(line > 1) {
-                    return toLine - line == 1;
+                    return dLine == 1;
                 }
             }
         }
 
-        if(getColor().toLowerCase(Locale.ROOT).equals("b")) {
+        if(getColor().toLowerCase(Locale.ROOT).equals("black")) {
             if((toLine < line) && (column == toColumn)) {
                 if(line == 6) {
-                    return toLine - line == -2 || toLine - line == -1;
+                    return dLine == -2 || dLine == -1;
                 } else if(line < 6) {
-                    return toLine - line == -1;
+                    return dLine == -1;
                 }
             }
         }
