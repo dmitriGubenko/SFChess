@@ -1,7 +1,5 @@
 package com.sf.gubenko.chess;
 
-import java.util.Locale;
-
 public class Bishop extends ChessPiece{
 
     public Bishop(String color) {
