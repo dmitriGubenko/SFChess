@@ -14,15 +14,9 @@ public class Queen extends ChessPiece{
 
     @Override
     boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
-        if( !chessBoard.checkPos(line) ||
-                !chessBoard.checkPos(column) ||
-                !chessBoard.checkPos(toLine) ||
-                !chessBoard.checkPos(toColumn)) {
-            return false;
-        }
-
-        //TODO Добавить логику по возможному передвижению королевы
-        return true;
+        return (chessBoard.isBasePos(line,column,toLine,toColumn) &&
+                (Math.abs(toLine-line) <= 1 && Math.abs(toColumn-column) <= 1
+                        || line == toLine || column == toColumn));
     }
 
     @Override
