@@ -21,12 +21,15 @@ public class King extends ChessPiece{
             return false;
         }
 
-        //TODO Добавить логику по возможному передвижению слона
+        if(((Math.abs(toLine - line) + Math.abs(toColumn - column) >= 1) &&
+                (Math.abs(toLine - line) + Math.abs(toColumn - column) <= 2)) &&
+                ((Math.abs(toLine - line) == 1) || (Math.abs(toColumn - column) == 1))){
+            //Рокировка
+            check = false;
+            return true;
+        }
 
-        //Рокировка
-
-        check = false;
-        return true;
+        return false;
     }
 
     @Override
