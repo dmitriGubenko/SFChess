@@ -1,7 +1,7 @@
 package com.sf.gubenko.chess;
 
 public abstract class ChessPiece {
-    private String color;
+    private final String color;
     private String symbol;
     boolean check = true;
 
