@@ -1,7 +1,7 @@
 package com.sf.gubenko.chess;
 
 public class ChessBoard {
-    private ChessPiece[][] board = new ChessPiece[8][8]; // creating a field for game
+    ChessPiece[][] board = new ChessPiece[8][8]; // creating a field for game
     private String nowPlayer;
 
     public ChessBoard(String nowPlayer) {
