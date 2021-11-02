@@ -17,8 +17,9 @@ public class King extends ChessPiece{
         if(!chessBoard.isBasePos(line,column,toLine,toColumn)) {
             return false;
         }
-        if((line - toLine <= 1 && line - toLine >= -1) &&
-                (column - toColumn <= 1 && column - toColumn >= -1)){
+        if(((line - toLine <= 1 && line - toLine >= -1) &&
+                (column - toColumn <= 1 && column - toColumn >= -1)) &&
+                chessBoard.isEnemyPiece(getColor(), toLine, toColumn)){
             //Рокировка
             check = false;
             return true;

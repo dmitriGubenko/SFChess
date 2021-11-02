@@ -143,4 +143,8 @@ public class ChessBoard {
             } else return false;
         }
     }
+
+    public boolean isEnemyPiece(String currentPieceColor, int toLine, int toColumn) {
+        return !board[toLine][toColumn].getColor().equals(currentPieceColor);
+    }
 }

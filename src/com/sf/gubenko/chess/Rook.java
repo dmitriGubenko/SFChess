@@ -18,8 +18,9 @@ public class Rook extends ChessPiece{
             return false;
         }
 
-        if(((line != toLine) && (column == toColumn)) ||
-                ((line == toLine) && (column != toColumn))) {
+        if((((line != toLine) && (column == toColumn)) ||
+                ((line == toLine) && (column != toColumn))) &&
+                chessBoard.isEnemyPiece(getColor(), toLine, toColumn)) {
             //рокировка
             check = false;
             return true;

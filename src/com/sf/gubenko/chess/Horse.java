@@ -15,7 +15,8 @@ public class Horse extends ChessPiece {
     boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
         return (chessBoard.isBasePos(line,column,toLine,toColumn)) &&
                 ((Math.abs(toLine - line) == 2 && Math.abs(toColumn - column) == 1) ||
-                        (Math.abs(toLine - line) == 1 && Math.abs(toColumn - column) == 2));
+                        (Math.abs(toLine - line) == 1 && Math.abs(toColumn - column) == 2)) &&
+                chessBoard.isEnemyPiece(getColor(), toLine, toColumn) ;
     }
 
     @Override

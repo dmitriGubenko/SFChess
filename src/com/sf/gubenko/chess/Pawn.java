@@ -21,7 +21,8 @@ public class Pawn extends ChessPiece{
         }
         int dLine = toLine - line;
         if(getColor().toLowerCase(Locale.ROOT).equals("white")) {
-            if((toLine > line) && (column == toColumn)) {
+            if(((toLine > line) && (column == toColumn)) &&
+                    chessBoard.isEnemyPiece(getColor(), toLine, toColumn)) {
                 if(line == 1) {
                     return dLine == 2 || dLine == 1;
                 } else if(line > 1) {
@@ -31,7 +32,8 @@ public class Pawn extends ChessPiece{
         }
 
         if(getColor().toLowerCase(Locale.ROOT).equals("black")) {
-            if((toLine < line) && (column == toColumn)) {
+            if(((toLine < line) && (column == toColumn)) &&
+                    chessBoard.isEnemyPiece(getColor(), toLine, toColumn)) {
                 if(line == 6) {
                     return dLine == -2 || dLine == -1;
                 } else if(line < 6) {
