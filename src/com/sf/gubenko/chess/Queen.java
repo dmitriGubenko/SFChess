@@ -14,10 +14,9 @@ public class Queen extends ChessPiece{
 
     @Override
     boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
-        return (chessBoard.isBasePos(line,column,toLine,toColumn) &&
-                (Math.abs(toLine-line) <= 1 && Math.abs(toColumn-column) <= 1
-                        || line == toLine || column == toColumn) &&
-                chessBoard.isEnemyPiece(getColor(), toLine, toColumn));
+       return ((chessBoard.isBasePos(line,column,toLine,toColumn)) &&
+                (new Bishop(getColor()).canMoveToPosition(chessBoard,line,column,toLine,toColumn) ||
+                 new Rook(getColor()).canMoveToPosition(chessBoard,line,column,toLine,toColumn)));
     }
 
     @Override
