@@ -19,7 +19,8 @@ public class King extends ChessPiece{
         }
         if(((line - toLine <= 1 && line - toLine >= -1) &&
                 (column - toColumn <= 1 && column - toColumn >= -1)) &&
-                chessBoard.isEnemyPiece(getColor(), toLine, toColumn)){
+                chessBoard.isEnemyPiece(getColor(), toLine, toColumn) &&
+                isUnderAttack(chessBoard, toLine, toColumn)){
             //Рокировка
             check = false;
             return true;
@@ -33,8 +34,21 @@ public class King extends ChessPiece{
         return gSymbol();
     }
 
-    public boolean isUnderAttack(ChessBoard chessBoard, int i, int i1) {
-        //TODO Добавить логику по проверке под атакой ли король
+    public boolean isUnderAttack(ChessBoard chessBoard, int line, int column) {
+        if(!chessBoard.checkPos(line) || !chessBoard.checkPos(column)) {
+            return false;
+        }
+
+        for (int i = 0; i < chessBoard.board[0].length; i++) {
+            for (int j = 0; j < chessBoard.board.length; j++) {
+                if (chessBoard.board[i][j] != null) {
+                    if (!chessBoard.board[i][j].getColor().equals(getColor()) &&
+                            chessBoard.board[i][j].canMoveToPosition(chessBoard, i, j, line, column)) {
+                        return true;
+                    }
+                }
+            }
+        }
         return false;
     }
 }
