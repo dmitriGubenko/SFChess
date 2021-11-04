@@ -33,9 +33,7 @@ public class ChessBoard {
     }
 
     public void printBoard() {
-        System.out.println("Turn " + nowPlayer);
-        System.out.println();
-        System.out.println("Player 2(Black)");
+        System.out.println("Turn " + "(" + nowPlayer + ")");
         System.out.println();
         System.out.println("\t0\t1\t2\t3\t4\t5\t6\t7");
 
@@ -51,7 +49,7 @@ public class ChessBoard {
             System.out.println();
             System.out.println();
         }
-        System.out.println("Player 1(White)");
+        System.out.println("Turn " + "(" + nowPlayer + ")");
     }
 
     public boolean checkPos(int pos) {
@@ -145,6 +143,9 @@ public class ChessBoard {
     }
 
     public boolean isEnemyPiece(String currentPieceColor, int toLine, int toColumn) {
-        return !board[toLine][toColumn].getColor().equals(currentPieceColor);
+        if(board[toLine][toColumn] != null) {
+            return !board[toLine][toColumn].getColor().equals(currentPieceColor);
+        }
+        return true;
     }
 }
