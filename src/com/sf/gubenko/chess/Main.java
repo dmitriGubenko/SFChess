@@ -47,13 +47,12 @@ public class Main {
     public static void main(String[] args) {
         ChessBoard board = buildBoard();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("""
-               Чтобы проверить игру надо вводить команды:
-               'exit' - для выхода
-               'replay' - для перезапуска игры
-               'castling0' или 'castling7' - для рокировки по соответствующей линии
-               'move 1 1 2 3' - для передвижения фигуры с позиции 1 1 на 2 3(поле это двумерный массив от 0 до 7)
-               Проверьте могут ли фигуры ходить друг сквозь друга, корректно ли съедают друг друга, можно ли поставить шах и сделать рокировку?""");
+        System.out.println("Чтобы проверить игру надо вводить команды:");
+        System.out.println("'exit' - для выхода");
+        System.out.println("'replay' - для перезапуска игры");
+        System.out.println("'castling0' или 'castling7' - для рокировки по соответствующей линии");
+        System.out.println("'move 1 1 2 3' - для передвижения фигуры с позиции 1 1 на 2 3(поле это двумерный массив от 0 до 7)");
+        System.out.println("Проверьте могут ли фигуры ходить друг сквозь друга, корректно ли съедают друг друга, можно ли поставить шах и сделать рокировку?");
         System.out.println();
         board.printBoard();
         while (true) {
