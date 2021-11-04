@@ -1,9 +1,9 @@
 package com.sf.gubenko.chess;
 
 public abstract class ChessPiece {
-    private String color;
+    private final String color;
     private String symbol;
-    private boolean check = true;
+    boolean check = true;
 
     public ChessPiece(String color) {
         this.color = color;
